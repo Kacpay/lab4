@@ -16,7 +16,6 @@ elif [ "$1" == "--logs" ]; then
         echo "Nazwa skryptu: $0" >> $nazwa
         echo "Data: $(date)" >> $nazwa
     done
-:<<C
 elif [ "$1" == "--help" ]; then
     echo "Dostępne opcje:"
     echo "  --date    - wyświetla dzisiejszą datę"
@@ -26,4 +25,4 @@ elif [ "$1" == "--help" ]; then
 else
     echo "Nieznana opcja. Użyj '$0 --help' aby wyświetlić dostępne opcje."
 fi
-C
+
