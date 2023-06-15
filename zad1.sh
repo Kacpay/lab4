@@ -2,12 +2,14 @@
 
 if [ "$1" == "--date" ]; then
     date
-:<<C
+
 elif [ "$1" == "--logs" ]; then
     if [ -z "$2" ]; then
         num_logs=100
+:<<C
     else
         num_logs=$2
+C
     fi
 
     for ((i=1; i<=$num_logs; i++)); do
@@ -16,7 +18,7 @@ elif [ "$1" == "--logs" ]; then
         echo "Nazwa skryptu: $0" >> $nazwa
         echo "Data: $(date)" >> $nazwa
     done
-:<<COMMENT
+:<<C
 elif [ "$1" == "--help" ]; then
     echo "Dostępne opcje:"
     echo "  --date    - wyświetla dzisiejszą datę"
