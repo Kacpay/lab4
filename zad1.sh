@@ -32,6 +32,7 @@ elif [ "$1" == "--init" ]; then
 
     echo "export PATH=\$PATH:$(pwd)" >> ~/.bashrc
     source ~/.bashrc
+    echo "error*.txt" >> .gitignore
 elif [ "$1" == "-e" ] || [ "$1" == "--error" ]; then
     if [ -z "$2" ]; then
         num_errors=100
@@ -47,6 +48,10 @@ elif [ "$1" == "-e" ] || [ "$1" == "--error" ]; then
         echo "Nazwa skryptu: $0" >> "$error_directory/$error_file"
         echo "Data: $(date)" >> "$error_directory/$error_file"
     done
+    
+    echo "error*.txt" >> .gitignore
+    echo "error*/" >> .gitignore
+
 else
     echo "Nieznana opcja. Użyj '$0 --help' aby wyświetlić dostępne opcje."
 fi
