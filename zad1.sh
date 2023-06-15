@@ -55,4 +55,4 @@ elif [ "$1" == "-e" ] || [ "$1" == "--error" ]; then
 else
     echo "Nieznana opcja. Użyj '$0 --help' aby wyświetlić dostępne opcje."
 fi
-
+#help uzupelniono wczesniej
