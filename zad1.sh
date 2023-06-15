@@ -32,7 +32,21 @@ elif [ "$1" == "--init" ]; then
 
     echo "export PATH=\$PATH:$(pwd)" >> ~/.bashrc
     source ~/.bashrc
+elif [ "$1" == "-e" ] || [ "$1" == "--error" ]; then
+    if [ -z "$2" ]; then
+        num_errors=100
+    else
+        num_errors=$2
+    fi
 
+    for ((i=1; i<=$num_errors; i++)); do
+        error_file="error$i.txt"
+        error_directory="error$i"
+        mkdir -p "$error_directory"
+        echo "Nazwa pliku: $error_file" >> "$error_directory/$error_file"
+        echo "Nazwa skryptu: $0" >> "$error_directory/$error_file"
+        echo "Data: $(date)" >> "$error_directory/$error_file"
+    done
 else
     echo "Nieznana opcja. Użyj '$0 --help' aby wyświetlić dostępne opcje."
 fi
