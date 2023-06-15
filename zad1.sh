@@ -27,4 +27,13 @@ elif [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
 else
     echo "Nieznana opcja. Użyj '$0 --help' aby wyświetlić dostępne opcje."
 fi
+elif [ "$1" == "--init" ]; then
+    git clone <repository_url> .
+
+    echo "export PATH=\$PATH:$(pwd)" >> ~/.bashrc
+    source ~/.bashrc
+
+else
+    echo "Nieznana opcja. Użyj '$0 --help' aby wyświetlić dostępne opcje."
+fi
 
