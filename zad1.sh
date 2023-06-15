@@ -6,10 +6,8 @@ if [ "$1" == "--date" ]; then
 elif [ "$1" == "--logs" ]; then
     if [ -z "$2" ]; then
         num_logs=100
-:<<C
     else
         num_logs=$2
-C
     fi
 
     for ((i=1; i<=$num_logs; i++)); do
